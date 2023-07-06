@@ -1,13 +1,35 @@
 {
+	"name": "pdf-number-pages",
 	"dependencies": {
+		"lodash": "^4.17.21",
 		"pdf-lib": "^1.17.1",
+		"pkg": "^5.8.1",
 		"typescript": "^5.1.6"
 	},
 	"main": "src/index.ts",
 	"scripts": {
-		"go": "node src/index.ts"
+		"script": "node dist/index.js",
+		"test": "tsc && pnpm run script -- --src=samples/sample-source.pdf --out=samples/output.pdf",
+		"tsc": "tsc",
+		"compile": "tsc && pkg package.json"
 	},
+	"type": "commonjs",
 	"devDependencies": {
-		"@gearbox-solutions/eslint-config-gbx": "^1.2.3"
+		"@gearbox-solutions/eslint-config-gbx": "^1.2.3",
+		"@types/node": "^18.16.19"
+	},
+	"bin": {
+		"number-pdf": "./dist/index.js"
+	},
+	"pkg": {
+		"targets": [
+			"node18-mac-x64",
+			"node18-mac-arm64",
+			"node18-win-x64"
+		],
+		"outputPath": "./dist/bin",
+		"options": [
+			"experimental-modules"
+		]
 	}
 }

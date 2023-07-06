@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "strict": true,
+    "strict": false,
     "jsx": "preserve",
     "sourceMap": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowJs": true,
     "lib": ["esnext", "dom"],
-    "types": ["@types/node",],
+    "types": ["@types/node"],
     "paths": {
       "@/*": ["./src/*"]
     },
-    "outDir": "./build/assets"
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "outDir": "./dist"
   },
   "typeRoots": ["./node_modules/@types", "src/types"],
   "include": [
-    "src/**/*.ts",
+    "src/**/*",
   ],
-  "exclude": ["node_modules", "public"]
 }
