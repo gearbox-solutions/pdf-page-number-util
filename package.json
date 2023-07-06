@@ -1,0 +1,13 @@
+{
+	"dependencies": {
+		"pdf-lib": "^1.17.1",
+		"typescript": "^5.1.6"
+	},
+	"main": "src/index.ts",
+	"scripts": {
+		"go": "node src/index.ts"
+	},
+	"devDependencies": {
+		"@gearbox-solutions/eslint-config-gbx": "^1.2.3"
+	}
+}
