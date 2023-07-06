@@ -44,5 +44,5 @@ pnpm run test -- --src=samples/source.pdf --out=samples/output.pdf
 Compiled executable CLI example:
 
 ```
-./dist/bin/pdf-number-pages-macos-arm64 --src=samples/source.pdf --out=samples/out-bin-arm.pdf
+./dist/bin/pdf-number-pages-macos-arm64 --src=samples/sample-source.pdf --out=samples/out-bin-arm.pdf
 ```
