@@ -3,7 +3,8 @@
 	"main": "src/index.ts",
 	"scripts": {
 		"script": "node dist/index.js",
-		"test": "tsc && pnpm run script -- --src=samples/sample-source.pdf --out=samples/output.pdf",
+		"test-defaults": "tsc && pnpm run script -- --src=samples/sample-source.pdf --out=samples/output.pdf",
+		"test-options": "tsc && pnpm run script -- --src=samples/sample-source.pdf --out=samples/output.pdf --bottom=200 --right=200 --color=#ff0000 --size=24",
 		"tsc": "tsc",
 		"compile": "tsc && pkg package.json"
 	},
