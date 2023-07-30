@@ -1,6 +1,8 @@
-const pdf_lib = require('pdf-lib');
-const fs = require('fs');
-const {processArguments} = require('./helperfunctions.js');
+import {processArguments} from './helperfunctions.js';
+
+import fs from 'fs';
+
+import {PDFDocument, StandardFonts, rgb} from 'pdf-lib';
 
 async function main() {
     const parameters = processArguments(process.argv);
@@ -22,11 +24,11 @@ async function main() {
 
 
     const read_file_sync = fs.readFileSync(parameters.src);
-    const pdf_doc = await pdf_lib.PDFDocument.load(read_file_sync);
+    const pdf_doc = await PDFDocument.load(read_file_sync);
     const pages = pdf_doc.getPages();
 
     // font formatting
-    const font = await pdf_doc.embedFont(pdf_lib.StandardFonts.Helvetica);
+    const font = await pdf_doc.embedFont(StandardFonts.Helvetica);
 
 
 
@@ -44,7 +46,7 @@ async function main() {
             y: textY,
             size: fontSize,
             font: font,
-            color: pdf_lib.rgb(rgbColor.r/255, rgbColor.g/255, rgbColor.b/255),
+            color: rgb(rgbColor.r/255, rgbColor.g/255, rgbColor.b/255),
         });
     }
 
@@ -54,7 +56,7 @@ async function main() {
 
 main();
 
-function hexToRgb(hex){
+function hexToRgb(hex: string){
     // convert hex to rgb
     const hexCode = hex.replace('#', '');
     const r = parseInt(hexCode.substring(0, 2), 16);

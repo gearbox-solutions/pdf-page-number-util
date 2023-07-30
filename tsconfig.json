@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ES2022",
     "module": "commonjs",
     "moduleResolution": "node",
-    "strict": false,
-    "jsx": "preserve",
+    "strict": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "allowJs": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["ES2022"],
     "types": ["@types/node"],
     "paths": {
       "@/*": ["./src/*"]
     },
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "resolveJsonModule": true,
     "outDir": "./dist"
   },

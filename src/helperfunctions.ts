@@ -1,7 +1,7 @@
-const trim = require('lodash/trim');
+import trim from 'lodash/trim';
 
-export const processArguments = (processArgs) => {
-    return processArgs.reduce((parameters, argument, index) => {
+export const processArguments = (processArgs: string[]) => {
+    return processArgs.reduce((parameters: {[key:string]: string}, argument, index) => {
         if(index < 2) {
             return parameters;
         }
